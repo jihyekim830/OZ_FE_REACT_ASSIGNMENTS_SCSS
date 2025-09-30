@@ -1,7 +1,7 @@
-import "./App.css";
-import { contents } from "./assets/data/data";
-import Content from "./components/Content";
-import Header from "./components/Header";
+import Content from './components/Content';
+import Header from './components/Header';
+import { contents } from './assets/data/data';
+import './App.scss';
 
 function App() {
   return (

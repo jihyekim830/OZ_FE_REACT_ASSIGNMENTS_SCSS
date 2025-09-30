@@ -1,0 +1,70 @@
+@mixin flex(
+  $direction: row,
+  $justify: start,
+  $align: stretch,
+  $gap: 0,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+
+@mixin font($size: inherit, $weight: normal) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+$color-black: black;
+$color-lime: #d7fa00;
+$color-gray: rgb(160, 160, 160);
+
+.header-container {
+  @include flex($justify: space-between, $align: center);
+  padding: 10px 20px;
+  background-color: $color-black;
+
+  ul {
+    @include flex($justify: center, $align: center, $gap: 20px);
+
+    li {
+      @include font(13px, 400);
+      list-style: none;
+    }
+  }
+}
+
+section {
+  @include flex($wrap: wrap, $gap: 20px);
+  padding: 20px 40px;
+}
+
+.content-container {
+  @include flex($direction: column, $align: flex-start, $gap: 5px);
+
+  img {
+    width: 300px;
+    border-radius: 10px;
+    margin-bottom: 3px;
+  }
+
+  span {
+    @include font(12px);
+    color: $color-lime;
+    border: 1px solid $color-lime;
+    padding: 4px 5px;
+    border-radius: 3px;
+  }
+
+  div {
+    @include font(18px, 600);
+  }
+
+  p {
+    @include font(12px);
+    color: $color-gray;
+  }
+}
